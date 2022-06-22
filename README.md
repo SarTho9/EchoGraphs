@@ -5,7 +5,7 @@ work in progress
 Overview
 -------
 
-Accurate and consistent predictions of echocardiography parameters are important for cardiovascular diagnosis and treatment. In particular, segmentations of the left ventricle can be used to derive ventricular volume,  ejection fraction (EF) and other relevant measurements. This project proposes a new automated method for predicting ejection fraction and segmenting the left ventricle by detecting anatomical keypoints. Models for direct coordinate regression based on Graph Convolutional Networks (GCNs) are used to detect the keypoints. GCNs can learn to represent the cardiac shape based on local appearance of each keypoint, as well as global spatial and temporal structures of all keypoints combined. We evaluated our model on the EchoNet benchmark dataset. Compared to semantic segmentation, GCNs show accurate segmentation and improvements in robustness and inference run-time. EF is computed simultaneously to segmentations and our method also obtains state-of-the-art ejection fraction estimation.
+Accurate and consistent predictions of echocardiography parameters are important for cardiovascular diagnosis and treatment. In particular, segmentations of the left ventricle can be used to derive ventricular volume,  ejection fraction (EF) and other relevant measurements. This project proposes a new automated method called EchoGraph for predicting ejection fraction and segmenting the left ventricle by detecting anatomical keypoints. Models for direct coordinate regression based on Graph Convolutional Networks (GCNs) are used to detect the keypoints. GCNs can learn to represent the cardiac shape based on local appearance of each keypoint, as well as global spatial and temporal structures of all keypoints combined. We evaluated our model on the EchoNet benchmark dataset. Compared to semantic segmentation, GCNs show accurate segmentation and improvements in robustness and inference run-time. EF is computed simultaneously to segmentations and our method also obtains state-of-the-art ejection fraction estimation.
 
 EchoGraphs provides a framework for graph-based contour detection for medical ultrasound. 
 The repository includes model configurations for
@@ -22,11 +22,13 @@ For more details, please refer to:
 
 Dataset
 -------
-refer to echonet, add link and description
+For training and evaluation we used the EchoNet dataset. 
+For more information on the dataset please refer to 
 
 
 Installation
 -------
+
 add required libraries
 
 pip install --user .
@@ -36,12 +38,15 @@ Usage
 
 ## Preprocessing
 
-To preprocess the original echonet data into a format that is readable by the training code provided in this repository, the 40 keypoints are extracted from the csv file and converted into npy file for each annotation together with other meta data like EF, ED/ES frame and the volumes.
+To preprocess the original echonet data into a format that is readable by the training code provided in this repository, the 40 keypoints are extracted from the csv file and converted into npy file for each annotation together with other meta data like EF, ED/ES frame and the volumes. Some preprocessing functions are taken from the EchoNet repository.
 
 
 ## Training
+The training script can be started with various parameters to adjust the model or the hyperparameter.
+
 
 ## Interference
+All trained models can be evaluated using the eval.py 
 
 ## Overiew Configurations and default parameter
 1) Single Frame approach
