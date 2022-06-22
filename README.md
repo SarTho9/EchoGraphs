@@ -43,7 +43,7 @@ To preprocess the original echonet data into a format that is readable by the tr
 
 ## Training
 The training script can be started with various parameters to adjust the model or the hyperparameter.
-
+You can select different models (i.e. CNNGCN for the single frame GCN), different backbones (i.e. mobilenet2 for a pretrained mobilenet version 2) and different datasets. We also integrated different augmentation bundles and achieved best results with the configuration 'strongkeep'. You can further select the probability of the applied augmentation. For the multi-frame models you can select the number of frames. 
 
 ## Interference
 All trained models can be evaluated using the eval.py 
